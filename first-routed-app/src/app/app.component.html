@@ -1,1 +1,12 @@
 <h1>Applicazione Routing Spotify</h1>
+
+<h2>Cerca</h2>
+
+<p>
+  <input type="text" #newquery>
+  <button (click)="submit(newquery)">Clicca per cercare</button>  <!--casella di testo e bottone x cercare una canzone-->
+</p>
+
+<div *ngIf="results">
+  {{results | json}}
+</div>

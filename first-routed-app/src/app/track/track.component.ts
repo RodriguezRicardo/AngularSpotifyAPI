@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ParamMap, ActivatedRoute, Router } from '@angular/router';
 import { SpotifyService } from '../spotify.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-track',
@@ -19,8 +20,8 @@ export class TrackComponent implements OnInit {
   constructor(
     private route : ActivatedRoute,
     private router : Router,
-    private service : SpotifyService
-  ) { }
+    private service : SpotifyService,
+    private location : Location ) { }
 
   ngOnInit(): void {
     //Si ottiene observable che notifica le informazioni sulla route attiva
@@ -38,7 +39,8 @@ export class TrackComponent implements OnInit {
     this.spotifyServiceObs.subscribe((data)=>this.track = data);
   }
 
-  back()
-  {/*DA FINIRE*/}
+  //per usare location bisogna iniettarlo nel costruttore del track component
+  back() : void
+  { this.location.back(); }
 
 }

@@ -1,3 +1,10 @@
-<h1>Applicazione Routing Spotify</h1>
+<h1>Applicazione Routing Spotify (Angular Router)</h1>
 
-<app-search></app-search> <!--Si aggiunge il search component -->
+<nav>
+  <a routerLink="/about" routerLinkActive="active">About</a> |
+  <a routerLink="/search" routerLinkActive="active">Search</a>
+</nav>
+
+<!--qui è dove angular sostituirà i componenti richiamati dal routing-->
+<!-- <app-search></app-search> Si aggiunge il search component -->
+<router-outlet></router-outlet>

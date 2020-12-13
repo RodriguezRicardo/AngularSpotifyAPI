@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { SearchComponent } from './search/search.component';
 import { TrackComponent } from './track/track.component';
+import { ArtistComponent } from './artist/artist.component';
 
 //Si scrivono le route
 const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'search', component: SearchComponent},
   { path: 'tracks/:id', component: TrackComponent},
-  { path: '', redirectTo: '/search', pathMatch: 'full'}  //la home del nostro sito la pagina search
+  { path: '', redirectTo: '/search', pathMatch: 'full'},  //la home del nostro sito la pagina search
+  { path : 'artists/:id', component: ArtistComponent}
 ];
 
 @NgModule({

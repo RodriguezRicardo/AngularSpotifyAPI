@@ -1,1 +1,28 @@
-<p>artist works!</p>
+<div *ngIf="artist">
+  <div class="col-sm-6 col-md-6">
+    <div class="thumbnail">
+      <h1 class="text-center">{{ artist.name }}</h1>
+      <p>
+        <center><img src="{{ artist.images[1].url }}"></center>
+      </p>
+
+      <h3>
+        <strong>Number of followers: {{artist.followers.total}}</strong>
+      </h3>
+
+      <h3>Genres:
+        <div *ngFor="let a of artist.genres">
+          <ul>
+            <li>{{a}}</li>
+          </ul>
+        </div>
+      </h3>
+
+      <h3 class="text-secondary">
+        Popularity: {{artist.popularity}}
+      </h3>
+
+      <h2 class="text-center"> <a href (click)="back()">Back</a> </h2>
+    </div>
+  </div>
+</div>

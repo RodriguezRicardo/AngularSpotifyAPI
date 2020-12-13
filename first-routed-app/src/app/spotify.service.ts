@@ -27,4 +27,10 @@ export class SpotifyService {
     return this.http.get(url, { headers });
   }
 
+  //metodo per id del artista
+  getArtistID(id: string) {
+    const url = `https://api.spotify.com/v1/artists/${id}`;
+    const headers = new HttpHeaders({ Authorization: environment.oauthToken });
+    return this.http.get(url, { headers });
+  }
 }

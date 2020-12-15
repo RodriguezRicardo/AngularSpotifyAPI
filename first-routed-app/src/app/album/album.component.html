@@ -10,7 +10,7 @@
       </h3>
       <div *ngFor="let tr of album.tracks.items">
         <hr>
-        <h2>{{tr.track_number}}, {{tr.name}}</h2>
+        <h2>{{tr.track_number}}, <a [routerLink]="['/tracks', tr.id]">{{tr.name}}</a></h2>
         <audio controls src="{{tr.preview_url}}"></audio>
       </div>
       <h2 class="text-center"> <a href (click)="back()">Back</a> </h2>

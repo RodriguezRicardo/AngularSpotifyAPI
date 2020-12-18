@@ -22,6 +22,7 @@
         Popularity: {{artist.popularity}}
       </h3>
 
+      <a type="button" class="btn btn-primary" [routerLink]="['/allAlbum', artist.id]">View all albums</a>
       <h2 class="text-center"> <a href (click)="back()">Back</a> </h2>
     </div>
   </div>

@@ -1,0 +1,13 @@
+<div *ngIf="ALLalbum">
+
+  <div *ngFor="let al of ALLalbum.items">
+    <hr>
+    <h1>{{al.name}}</h1>
+    <img src="{{ al.images[1].url}}" class="img-responsive">
+    <h2>Data di rilascio: {{al.release_date}}</h2>
+    <h2>Numero traccie: {{al.total_tracks}}</h2>
+    <a [routerLink]="['/artists', al.artists[0].id]"><h2>Torna alla pagina dell'artista: {{al.artists[0].name}}</h2></a>
+  </div>
+
+  <h2 class="text-center"> <a href (click)="back()">Back</a> </h2>
+</div>
